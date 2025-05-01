@@ -22,7 +22,7 @@ function Register() {
         setError('');
 
         try {
-            await axios.post('http://localhost:5000/api/auth/register', formData);
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, formData);
             toast.success('Registered successfully');
             navigate('/');
         } catch (err) {

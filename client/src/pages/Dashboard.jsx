@@ -102,7 +102,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchSalespersons = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/salespersons', {
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/auth/salespersons`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setSalespersons(res.data);
@@ -128,10 +128,10 @@ function Dashboard() {
 
 
         const [revenueRes, productRes, regionRes, funnelRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/dashboard/monthly-revenue?${queryString}`, { headers }),
-          axios.get(`http://localhost:5000/api/dashboard/product-breakdown?${queryString}`, { headers }),
-          axios.get(`http://localhost:5000/api/dashboard/region-sales?${queryString}`, { headers }),
-          axios.get(`http://localhost:5000/api/dashboard/sales-funnel?${queryString}`, { headers }),
+          axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/dashboard/monthly-revenue?${queryString}`, { headers }),
+          axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/dashboard/product-breakdown?${queryString}`, { headers }),
+          axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/dashboard/region-sales?${queryString}`, { headers }),
+          axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/dashboard/sales-funnel?${queryString}`, { headers }),
         ]);
 
         setMonthlyRevenue(revenueRes.data);
