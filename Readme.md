@@ -44,3 +44,7 @@ A full-stack web application that visualizes and manages sales data with advance
 ```bash
 git clone https://github.com/BleedingEdge2004/Full-Stack-Project.git
 cd Full-Stack-Project
+
+
+✍️Author
+-SachinKuamrYadav
